@@ -7,33 +7,30 @@
 23432 -> да 
 */ 
  
-Console.Clear(); 
-Console.WriteLine("Введите пятизначное число"); 
+Console.Clear();
+Console.WriteLine("Введите пятизначное число");
 int UserNumber = int.Parse(Console.ReadLine());
-int ReverseNumber = 0; 
-int reminder = 0;
-
+int ReverseNumber = 0;
+int modifiedUserNumber = UserNumber;
 
 if (UserNumber > 10000 && UserNumber < 99999)
 {
-  while (UserNumber > 0)
-  {
+    while (modifiedUserNumber > 0)
     {
-    ReverseNumber = (ReverseNumber * 10) + (UserNumber % 10);
-    UserNumber = UserNumber / 10;  
-    Console.WriteLine($"число {ReverseNumber}");
+        ReverseNumber = (ReverseNumber * 10) + (modifiedUserNumber % 10);
+        modifiedUserNumber = modifiedUserNumber / 10;
     }
-      if (ReverseNumber == UserNumber)
-      {
-        Console.WriteLine($"число {UserNumber} является полиндромом"); 
-      }
-      else 
-      { 
+
+    if (ReverseNumber == UserNumber)
+    {
+        Console.WriteLine($"число {UserNumber} является полиндромом");
+    }
+    else
+    {
         Console.WriteLine($"число {UserNumber} не является полиндромом");
-      } 
-  } 
+    }
 }
 else
 {
-Console.WriteLine($"число {UserNumber} не является пятизначным");.
+    Console.WriteLine($"число {UserNumber} не является пятизначным");
 }
